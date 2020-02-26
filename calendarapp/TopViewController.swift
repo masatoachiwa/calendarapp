@@ -41,7 +41,7 @@ class TopViewController: UIViewController {
 
         override func viewDidLoad() {
                 super.viewDidLoad()
-                
+                print("ファイルを修正しました")
        
                 yearLabel.text = "\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日"
                 
