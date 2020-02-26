@@ -85,10 +85,10 @@ class CalendarCell: UICollectionViewCell {
                 if month < 10{ //月が10以下だったら
                         let newMonth =  String("0") + String(month)
                         print(String(year) + String(newMonth) + self.textLabel.text! )
-               
+                 print(good!)
 
 
-                     print(good!)
+                     
                         
                         
                         if good!.contains(String(year) + String(newMonth) + self.textLabel.text!)  { //goodの配列の中の数字と、カレンダーの日付が同じ日に

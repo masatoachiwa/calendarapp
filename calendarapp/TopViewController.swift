@@ -20,7 +20,7 @@ class TopViewController: UIViewController {
         
         @IBOutlet var badLabel: UILabel!
         
-     
+     var n = 0
         
         
         
@@ -34,7 +34,9 @@ class TopViewController: UIViewController {
         let dateFormatter = DateFormatter() //文字列からDate型の日付を生成できる（インスタンスの作成）
       
         
-
+    //    let newPoint = UserDefaults.standard.integer(forKey: {"point"}()) //消す
+        
+//        let newbadPoint = UserDefaults.standard.integer(forKey: {"badPoint"}()) //消す
         
 
         override func viewDidLoad() {
@@ -59,9 +61,11 @@ class TopViewController: UIViewController {
              badLabel.text = String(talkManager.currentTotalbadPoint)
                 
                 talkManager.date(abcd:dateFormatter.string(from: date) ) //配列に初期値を代入
-                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
-                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
-              
+                talkManager.badDate(abcd:dateFormatter.string(from: date) )
+                talkManager.restDate(abcd:dateFormatter.string(from: date) )
+                
+                
+                
         }
         
         
@@ -78,11 +82,12 @@ class TopViewController: UIViewController {
                 
           talkManager.date(abcd:dateFormatter.string(from: date) )
         print(talkManager.dayArray)
-
-                //                let modifiedDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
-//
-//                print(date)
-//                print(modifiedDate)
+                
+                let modifiedDate = Calendar.current.date(byAdding: .day, value: n, to: date)!
+                n = n + 1
+                print(date)
+                print(modifiedDate)
+                
         }
         
         
@@ -95,9 +100,6 @@ class TopViewController: UIViewController {
                 
                 dateFormatter.dateFormat = "yyyyMMdd" //yyMMddの形式で日付を生成する
                 print(dateFormatter.string(from: date)) //本日の日付を取得
-//                let modifiedDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
-//                print(modifiedDate)
-                
                 
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
                 print(talkManager.baddayArray)
@@ -114,7 +116,11 @@ class TopViewController: UIViewController {
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
                 print(talkManager.restdayArray)
                 
-
+                
+                
+                
+                
+                
         }
         
         @IBAction func rest(_ sender: Any) {
