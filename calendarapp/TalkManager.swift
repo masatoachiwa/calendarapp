@@ -58,11 +58,15 @@ class TalkManager {
         var userDefaults = UserDefaults.standard  // UserDefaultsの定義
       
         var dayArray: [String] = ["りんご"]
-        var baddayArray: [String] = ["ごりら"]
-        var restdayArray: [String] = ["らっぱ"]
+        var baddayArray: [String] = []
+        var restdayArray: [String] = []
+        
+        
+        
         
         func date(abcd:String){ //yymmddの追加と値の保存
 
+                dayArray =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String])!
                 dayArray.append(abcd)
                 
                 let defaults = UserDefaults.standard

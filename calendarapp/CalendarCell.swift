@@ -22,7 +22,7 @@ class CalendarCell: UICollectionViewCell {
      
         
         let datemanager = DateManager()
-        
+        let talkmanager = TalkManager.shared
         
         required init?(coder aDecoder: NSCoder) {
                 
@@ -68,8 +68,8 @@ class CalendarCell: UICollectionViewCell {
                 // ここで保存した日付を取得する、今は仮に今日日付を取得
                 
 
-                cellImage.isHidden = true
-                cellImage1.isHidden = true
+               cellImage.isHidden = true
+               cellImage1.isHidden = true
         cellImage2.isHidden = true
                 
                 
@@ -85,7 +85,7 @@ class CalendarCell: UICollectionViewCell {
                 if month < 10{ //月が10以下だったら
                         let newMonth =  String("0") + String(month)
                         print(String(year) + String(newMonth) + self.textLabel.text! )
-                 print(good!)
+                 //print(good!)
 
 
                      
@@ -107,8 +107,8 @@ class CalendarCell: UICollectionViewCell {
                                                         cellImage2.isHidden = false //ハイフンを隠さない
                                                         
                                                         
-                                }
-                        
+                                
+                        }
                                 
               
                         
@@ -138,7 +138,6 @@ class CalendarCell: UICollectionViewCell {
         }
         
 }
-
 
 
 

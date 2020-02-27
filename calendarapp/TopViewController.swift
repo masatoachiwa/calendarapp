@@ -72,7 +72,7 @@ class TopViewController: UIViewController {
         
         
         @IBAction func goodButton(_ sender: Any) {
-             //     TalkManager.shared.currentType = .good
+                 TalkManager.shared.currentType = .good
                 TalkManager.shared.point += 1
                 kariLabel.text = TalkManager.shared.numberOfLabel()
                 pointLabel.text = String(TalkManager.shared.currentTotalPoint)
@@ -80,13 +80,19 @@ class TopViewController: UIViewController {
                 dateFormatter.dateFormat = "yyyyMMdd" //yyMMddの形式で日付を生成する
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
-          talkManager.date(abcd:dateFormatter.string(from: date) )
-        print(talkManager.dayArray)
+         
+                talkManager.date(abcd:dateFormatter.string(from: date) )
+         
+            //    talkManager.date(abcd: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: n, to: date)!))       日付が１日プラスされる（デバック用コード）
+               // n = n + 1
+                print(talkManager.dayArray)
                 
-                let modifiedDate = Calendar.current.date(byAdding: .day, value: n, to: date)!
-                n = n + 1
-                print(date)
-                print(modifiedDate)
+           
+           
+          
+          
+                
+             
                 
         }
         

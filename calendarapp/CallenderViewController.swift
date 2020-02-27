@@ -51,7 +51,7 @@ class CallenderViewController: UIViewController,UICollectionViewDataSource, UICo
                 
               // correlction.reloadData()
                
-               datemanager.dateManager(datemanager.year,datemanager.month) //いらないはず
+               datemanager.dateManager(datemanager.year,datemanager.month)
             
                 headTitle.text = "\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日"
                 
@@ -90,7 +90,7 @@ class CallenderViewController: UIViewController,UICollectionViewDataSource, UICo
                       
                         cell.textLabel.text = datemanager.daysArray[indexPath.row]
                         //Index番号から表示する日を求める.getToday()
-                       // cell.getToday(year: datemanager.year, month: datemanager.month,day: datemanager.day)
+                   //     cell.getToday(year: datemanager.year, month: datemanager.month,day: datemanager.day)
                         cell.getToday(year: nowYear, month: nowMonth,day: datemanager.day)
                         
                        cell.cellImage.image = UIImage(named: "mark_maru")
