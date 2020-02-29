@@ -77,7 +77,7 @@ class TopViewController: UIViewController {
                 kariLabel.text = TalkManager.shared.numberOfLabel()
                 pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 
-                dateFormatter.dateFormat = "yyyyMMdd" //yyMMddの形式で日付を生成する
+                dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
          
@@ -85,7 +85,7 @@ class TopViewController: UIViewController {
          
             //    talkManager.date(abcd: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: n, to: date)!))       日付が１日プラスされる（デバック用コード）
                // n = n + 1
-                print(talkManager.dayArray)
+                print(talkManager.newdayArray)
                 
            
            
@@ -104,23 +104,23 @@ class TopViewController: UIViewController {
                 kariLabel.text = TalkManager.shared.badOfLabel()
                 badLabel.text = String(TalkManager.shared.currentTotalbadPoint)
                 
-                dateFormatter.dateFormat = "yyyyMMdd" //yyMMddの形式で日付を生成する
+                dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
-                print(talkManager.baddayArray)
+                print(talkManager.newbaddayArray)
                 
                 
                 
          
         }
         
-        @IBAction func rsetButton(_ sender: Any) {
-                dateFormatter.dateFormat = "yyyyMMdd" //yyMMddの形式で日付を生成する
+        @IBAction func restButton(_ sender: Any) {
+                dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
-                print(talkManager.restdayArray)
+                print(talkManager.newrestdayArray)
                 
                 
                 
@@ -129,7 +129,7 @@ class TopViewController: UIViewController {
                 
         }
         
-        @IBAction func rest(_ sender: Any) {
+        @IBAction func risettButton(_ sender: Any) {
                 TalkManager.shared.resetPoint()
                 kariLabel.text = TalkManager.shared.numberOfLabel()
                 pointLabel.text = String(TalkManager.shared.point)

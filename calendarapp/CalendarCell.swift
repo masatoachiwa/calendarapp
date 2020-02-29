@@ -63,7 +63,7 @@ class CalendarCell: UICollectionViewCell {
         func getToday(year: Int, month:Int ,day: Int){
                 //   print(year)
                 //   print(month)
-                //    print(self.textLabel.text!) // ここにcellの日付が入る。
+                   print(self.textLabel.text!) // ここにcellの日付が入る。(1,2,3,〜31,注意　一桁は0がつかない）
                 //    print("\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日")
                 // ここで保存した日付を取得する、今は仮に今日日付を取得
                 
@@ -75,7 +75,6 @@ class CalendarCell: UICollectionViewCell {
                 
                 let good =  UserDefaults.standard.array(forKey: {"dayArray"}())as? [String]          //配列の呼び出し
                 
-                
                 let bad =  UserDefaults.standard.array(forKey: {"baddayArray"}())as? [String]          //配列の呼び出し
                 
                 let rest =  UserDefaults.standard.array(forKey: {"restdayArray"}())as? [String]          //配列の呼び出し
@@ -83,36 +82,25 @@ class CalendarCell: UICollectionViewCell {
 
                 
                 if month < 10{ //月が10以下だったら
+                       
+                    
+                        
                         let newMonth =  String("0") + String(month)
                         print(String(year) + String(newMonth) + self.textLabel.text! )
-                 //print(good!)
-
-
-                     
-                        
-                        
+                
                         if good!.contains(String(year) + String(newMonth) + self.textLabel.text!)  { //goodの配列の中の数字と、カレンダーの日付が同じ日に
                                         cellImage.isHidden = false //○を隠さない
-                                        
                                 }
                                 
-                                        
                                   else   if  bad!.contains(String(year) + String(newMonth) + self.textLabel.text!){
                                                 cellImage1.isHidden = false //バツを隠さない
-                                                
-                                                
                                 }
                                 
                                           else   if  rest!.contains(String(year) + String(newMonth) + self.textLabel.text!){
                                                         cellImage2.isHidden = false //ハイフンを隠さない
-                                                        
-                                                        
-                                
                         }
                                 
-              
-                        
-                }else { //月が10以下でなかったら
+              }else { //月が10以下でなかったら
                         
                         print(String(year) + String(month) + self.textLabel.text! )
                         

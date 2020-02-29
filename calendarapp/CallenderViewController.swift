@@ -81,6 +81,9 @@ class CallenderViewController: UIViewController,UICollectionViewDataSource, UICo
                 let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CalendarCell
                 if(indexPath.section == 0){             //曜日表示
                         cell.backgroundColor = UIColor.white
+                        cell.cellImage.isHidden = true
+                       cell.cellImage1.isHidden = true
+                       cell.cellImage2.isHidden = true
                                    cell.textLabel.text = weekArray[indexPath.row] //配列を１行目の１番目から表示
                         
                 }else{                                  //日付表示
@@ -92,6 +95,7 @@ class CallenderViewController: UIViewController,UICollectionViewDataSource, UICo
                         //Index番号から表示する日を求める.getToday()
                    //     cell.getToday(year: datemanager.year, month: datemanager.month,day: datemanager.day)
                         cell.getToday(year: nowYear, month: nowMonth,day: datemanager.day)
+                      //  print(nowYear, nowMonth,datemanager.day,String("ああ"))
                         
                        cell.cellImage.image = UIImage(named: "mark_maru")
                         

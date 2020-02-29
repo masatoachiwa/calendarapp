@@ -61,46 +61,50 @@ class TalkManager {
         var baddayArray: [String] = []
         var restdayArray: [String] = []
         
+     
         
+        var newdayArray : [String] =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? ["りんご"])
+        var newbaddayArray : [String] =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? ["ごりら"])
+        var newrestdayArray : [String] =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? ["らっぱ"])
         
         
         func date(abcd:String){ //yymmddの追加と値の保存
 
-                dayArray =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? ["りんご"])
-                dayArray.append(abcd)
+       
+               newdayArray.append(abcd)
                 
                 let defaults = UserDefaults.standard
-               defaults.set(dayArray, forKey: "dayArray")
+               defaults.set(newdayArray, forKey: "dayArray")
                 
 
         }
         func badDate(abcd:String){ //yymmddの追加と値の保存
                 
-                baddayArray.append(abcd)
+                newbaddayArray.append(abcd)
                 
                 let defaults = UserDefaults.standard
-                defaults.set(baddayArray, forKey: "baddayArray")
+                defaults.set(newbaddayArray, forKey: "baddayArray")
                 
                
         }
         func restDate(abcd:String){ //yymmddの追加と値の保存
                 
-                 restdayArray.append(abcd)
+                 newrestdayArray.append(abcd)
                 
                 let defaults = UserDefaults.standard
-                defaults.set(restdayArray, forKey: "restdayArray")
+                defaults.set(newrestdayArray, forKey: "restdayArray")
                 
         }
         
         
         func remove(){
-                dayArray.removeAll() //配列空にする
+                newdayArray.removeAll() //配列空にする
                 let defaults = UserDefaults.standard
-                defaults.set(dayArray, forKey: "dayArray")
-                baddayArray.removeAll() //配列空にする
+                defaults.set(newdayArray, forKey: "dayArray")
+                newbaddayArray.removeAll() //配列空にする
                 let baddefaults = UserDefaults.standard
                 baddefaults.set(baddayArray, forKey: "baddayArray")
-                restdayArray.removeAll() //配列空にする
+                newrestdayArray.removeAll() //配列空にする
                 let restdefaults = UserDefaults.standard
                 restdefaults.set(restdayArray, forKey: "restdayArray")
                 

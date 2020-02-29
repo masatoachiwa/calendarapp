@@ -47,7 +47,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="本日はお休み"/>
                                 <connections>
-                                    <action selector="rsetButton:" destination="N5T-Gl-eeh" eventType="touchUpInside" id="HV1-dZ-Whf"/>
+                                    <action selector="restButton:" destination="N5T-Gl-eeh" eventType="touchUpInside" id="5Bu-h0-rJA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4d-cq-Siq">
@@ -71,7 +71,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="リセット"/>
                                 <connections>
-                                    <action selector="rest:" destination="N5T-Gl-eeh" eventType="touchUpInside" id="icj-Vl-rfM"/>
+                                    <action selector="risettButton:" destination="N5T-Gl-eeh" eventType="touchUpInside" id="0yD-fE-hpX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="point" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01f-ve-8pG">
@@ -163,7 +163,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U0D-pJ-7Qb">
-                                <rect key="frame" x="0.0" y="189" width="414" height="543"/>
+                                <rect key="frame" x="0.0" y="189" width="394" height="532"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="xwR-zP-pmL">
