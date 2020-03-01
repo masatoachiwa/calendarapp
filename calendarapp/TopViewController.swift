@@ -22,6 +22,7 @@ class TopViewController: UIViewController {
         
      var n = 0
         
+        @IBOutlet var topView: UIImageView!
         
         
         
@@ -51,7 +52,7 @@ class TopViewController: UIViewController {
                 
                 switch TalkManager.shared.currentType {
                 case .good:
-                        kariLabel.text = TalkManager.shared.numberOfLabel()
+                       // kariLabel.text = TalkManager.shared.numberOfLabel()
                           pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 case .bad:
                         kariLabel.text = TalkManager.shared.badOfLabel()
@@ -63,8 +64,8 @@ class TopViewController: UIViewController {
                 talkManager.date(abcd:dateFormatter.string(from: date) ) //配列に初期値を代入
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
-                
-                
+              
+               
                 
         }
         
@@ -74,7 +75,7 @@ class TopViewController: UIViewController {
         @IBAction func goodButton(_ sender: Any) {
                  TalkManager.shared.currentType = .good
                 TalkManager.shared.point += 1
-                kariLabel.text = TalkManager.shared.numberOfLabel()
+            //    kariLabel.text = TalkManager.shared.numberOfLabel()
                 pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
@@ -131,7 +132,7 @@ class TopViewController: UIViewController {
         
         @IBAction func risettButton(_ sender: Any) {
                 TalkManager.shared.resetPoint()
-                kariLabel.text = TalkManager.shared.numberOfLabel()
+       //         kariLabel.text = TalkManager.shared.numberOfLabel()
                 pointLabel.text = String(TalkManager.shared.point)
                 badLabel.text = String(TalkManager.shared.badPoint)
                 

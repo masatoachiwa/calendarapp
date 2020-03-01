@@ -25,8 +25,13 @@ class ImageViewController: UIViewController {
        
         }
         override func viewWillAppear(_ animated: Bool) {
-                speechText.text = TalkManager.shared.numberOfLabel()
-   
+               
+                speechText.text = TalkManager.shared.numberOfLabel().0
+                jkImage.image = TalkManager.shared.numberOfLabel().1
+                
+                
+                //(speechText.text!,jkImage.image!) = TalkManager.shared.numberOfLabel()
+             
                 
         }
 
