@@ -86,7 +86,7 @@ class CalendarCell: UICollectionViewCell {
                     
                         
                         let newMonth =  String("0") + String(month)
-                        print(String(year) + String(newMonth) + self.textLabel.text! )
+                       // print(String(year) + String(newMonth) + self.textLabel.text! )
                 
                         if good!.contains(String(year) + String(newMonth) + self.textLabel.text!)  { //goodの配列の中の数字と、カレンダーの日付が同じ日に
                                         cellImage.isHidden = false //○を隠さない

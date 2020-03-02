@@ -52,7 +52,7 @@ class TopViewController: UIViewController {
                 
                 switch TalkManager.shared.currentType {
                 case .good:
-                       // kariLabel.text = TalkManager.shared.numberOfLabel()
+                        kariLabel.text = TalkManager.shared.numberOfLabel().0
                           pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 case .bad:
                         kariLabel.text = TalkManager.shared.badOfLabel()
@@ -66,7 +66,7 @@ class TopViewController: UIViewController {
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
               
                
-                
+               
         }
         
         
@@ -75,7 +75,7 @@ class TopViewController: UIViewController {
         @IBAction func goodButton(_ sender: Any) {
                  TalkManager.shared.currentType = .good
                 TalkManager.shared.point += 1
-            //    kariLabel.text = TalkManager.shared.numberOfLabel()
+                kariLabel.text = TalkManager.shared.numberOfLabel().0
                 pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
@@ -86,7 +86,7 @@ class TopViewController: UIViewController {
          
             //    talkManager.date(abcd: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: n, to: date)!))       日付が１日プラスされる（デバック用コード）
                // n = n + 1
-                print(talkManager.newdayArray)
+               // print(talkManager.dayArray)
                 
            
            
@@ -109,7 +109,7 @@ class TopViewController: UIViewController {
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
-                print(talkManager.newbaddayArray)
+                //print(talkManager.baddayArray)
                 
                 
                 
@@ -121,7 +121,7 @@ class TopViewController: UIViewController {
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
-                print(talkManager.newrestdayArray)
+                print(talkManager.restdayArray)
                 
                 
                 
