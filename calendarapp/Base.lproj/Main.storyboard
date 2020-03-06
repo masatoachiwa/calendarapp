@@ -108,10 +108,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="home1" id="2SG-vo-dFw"/>
                     <connections>
+                        <outlet property="badButton" destination="MlC-ST-EN0" id="rMO-d3-nGl"/>
                         <outlet property="badLabel" destination="ARR-xn-rI3" id="9Ka-mg-Vfi"/>
                         <outlet property="doLabel" destination="ea4-gH-Vk0" id="clA-AU-cJg"/>
+                        <outlet property="goodButton" destination="Jkd-Pe-snm" id="Niq-p9-mfh"/>
                         <outlet property="kariLabel" destination="b4d-cq-Siq" id="uwu-y0-BZV"/>
                         <outlet property="pointLabel" destination="few-VI-K9y" id="kHC-ba-Hp1"/>
+                        <outlet property="restButton" destination="wa8-SS-Rw3" id="qeJ-GR-QA5"/>
                         <outlet property="yearLabel" destination="vRf-k5-bds" id="SIo-hE-B1q"/>
                     </connections>
                 </viewController>
@@ -309,11 +312,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="haruko1" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-QS-dz4">
-                                <rect key="frame" x="0.0" y="60" width="384" height="465"/>
+                                <rect key="frame" x="0.0" y="60" width="448" height="673"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最近頑張っているみたいだね！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubs-Uc-1Ou">
-                                <rect key="frame" x="0.0" y="430" width="414" height="95"/>
+                                <rect key="frame" x="0.0" y="621" width="414" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

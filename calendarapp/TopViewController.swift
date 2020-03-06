@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TopViewController: UIViewController {
-        
+class TopViewController: UIViewController,UIApplicationDelegate {
+
+
+
         @IBOutlet var yearLabel: UILabel!
         
         @IBOutlet var doLabel: UILabel!
@@ -23,6 +25,13 @@ class TopViewController: UIViewController {
      var n = 0
         
         @IBOutlet var topView: UIImageView!
+        
+        @IBOutlet var goodButton: UIButton!
+        
+        @IBOutlet var badButton: UIButton!
+        
+        @IBOutlet var restButton: UIButton!
+        
         
         
         
@@ -42,6 +51,14 @@ class TopViewController: UIViewController {
 
         override func viewDidLoad() {
                 super.viewDidLoad()
+              
+                
+                
+                
+                
+                
+                
+                
                 print("ファイルを修正しました")
        
                 yearLabel.text = "\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日"
@@ -89,9 +106,9 @@ class TopViewController: UIViewController {
                // print(talkManager.dayArray)
                 
            
-           
-          
-          
+//          badButton.isEnabled = false // ボタン無効
+//         restButton.isEnabled = false
+//          goodButton.isEnabled = false
                 
              
                 
@@ -111,7 +128,9 @@ class TopViewController: UIViewController {
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
                 //print(talkManager.baddayArray)
                 
-                
+//                badButton.isEnabled = false // ボタン無効
+//                restButton.isEnabled = false
+//                goodButton.isEnabled = false
                 
          
         }
@@ -124,7 +143,9 @@ class TopViewController: UIViewController {
                 print(talkManager.restdayArray)
                 
                 
-                
+//                badButton.isEnabled = false // ボタン無効
+//                restButton.isEnabled = false
+//                goodButton.isEnabled = false
                 
                 
                 
@@ -140,6 +161,17 @@ class TopViewController: UIViewController {
                talkManager.remove()
                
         }
+        
+        
+        //------日付更新処理-----------
+
+        - (void)applicationSignificantTimeChange:(UIApplication *)application{
+        
+        NSLog(@"日付の表示を変えてください。");
+        
+        }
+        
+
         
         
         

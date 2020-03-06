@@ -118,8 +118,8 @@ class TalkManager {
         }
         
         
-        let image0 = UIImage(named:"haruko1")
-         let image1 = UIImage(named:"haruko2")
+        let image0 = UIImage(named:"01")
+         let image1 = UIImage(named:"02")
         let image2 = UIImage(named:"haruko3")
         let image3 = UIImage(named:"haruko4")
         let image4 = UIImage(named:"haruko5")
