@@ -12,6 +12,10 @@ class SetupManager {
         static  let shared = SetupManager() //staticがないとエラー(シングルトン）
         private  init(){}
 
+     
+        
+        
+        
         func register(name:String){
                 let nameDefaults = UserDefaults.standard
                 nameDefaults.set(name, forKey: "name")
@@ -24,7 +28,7 @@ class SetupManager {
                 effortDefaults.set(effort, forKey: "effort")
         }
         
-        func register3(period:Int){
+        func register3(period:String){
                 let periodDefaults = UserDefaults.standard
                 periodDefaults.set(period, forKey: "period")
         

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--ホーム-->
         <scene sceneID="wq9-CM-uf0">
             <objects>
                 <viewController id="N5T-Gl-eeh" customClass="TopViewController" customModule="calendarapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eSX-bc-Ds7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2SG-vo-dFw"/>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="home1" id="2SG-vo-dFw"/>
                     <connections>
                         <outlet property="badLabel" destination="ARR-xn-rI3" id="9Ka-mg-Vfi"/>
                         <outlet property="doLabel" destination="ea4-gH-Vk0" id="clA-AU-cJg"/>
@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="-2331" y="75"/>
         </scene>
-        <!--Item-->
+        <!--カレンダー-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CallenderViewController" customModule="calendarapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -199,7 +199,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="0M4-HY-Z29"/>
+                    <tabBarItem key="tabBarItem" title="カレンダー" image="karenda1" id="0M4-HY-Z29"/>
                     <connections>
                         <outlet property="collectionView" destination="U0D-pJ-7Qb" id="xKg-td-0si"/>
                         <outlet property="correlction" destination="U0D-pJ-7Qb" id="4jt-BU-2EY"/>
@@ -210,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="-468.11594202898556" y="-313.39285714285711"/>
         </scene>
-        <!--Item-->
+        <!--設定-->
         <scene sceneID="DYc-j0-cnI">
             <objects>
                 <viewController id="WKA-KQ-kol" customClass="SetupViewController" customModule="calendarapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -288,7 +288,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="JEC-qr-lmS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="tqI-IZ-dkg"/>
+                    <tabBarItem key="tabBarItem" title="設定" image="gia2" id="tqI-IZ-dkg"/>
                     <connections>
                         <outlet property="effortText" destination="mb9-kv-rpl" id="rQq-YC-5ey"/>
                         <outlet property="nameText" destination="RNX-U1-Bga" id="S5m-fj-Shm"/>
@@ -300,7 +300,7 @@
             </objects>
             <point key="canvasLocation" x="-1410.144927536232" y="371.65178571428572"/>
         </scene>
-        <!--Item-->
+        <!--クラスメート-->
         <scene sceneID="HcI-ue-StF">
             <objects>
                 <viewController id="lTS-4W-tcp" customClass="ImageViewController" customModule="calendarapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -313,7 +313,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最近頑張っているみたいだね！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubs-Uc-1Ou">
-                                <rect key="frame" x="0.0" y="480" width="414" height="185"/>
+                                <rect key="frame" x="0.0" y="430" width="414" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -323,7 +323,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="znG-Wb-QBV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="QQB-G6-f97"/>
+                    <tabBarItem key="tabBarItem" title="クラスメート" image="zyosi1" id="QQB-G6-f97"/>
                     <connections>
                         <outlet property="jkImage" destination="m7i-QS-dz4" id="iUM-zN-K0E"/>
                         <outlet property="speechText" destination="ubs-Uc-1Ou" id="J7m-4s-gQi"/>
@@ -335,6 +335,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gia2" width="32" height="32"/>
         <image name="haruko1" width="400" height="300"/>
+        <image name="home1" width="32" height="32"/>
+        <image name="karenda1" width="32" height="32"/>
+        <image name="zyosi1" width="32" height="32"/>
     </resources>
 </document>

@@ -55,7 +55,7 @@ class TopViewController: UIViewController {
                         kariLabel.text = TalkManager.shared.numberOfLabel().0
                           pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 case .bad:
-                        kariLabel.text = TalkManager.shared.badOfLabel()
+                        kariLabel.text = TalkManager.shared.badOfLabel().0
                         
                 }
                 pointLabel.text = String(talkManager.currentTotalPoint)
@@ -102,7 +102,7 @@ class TopViewController: UIViewController {
         @IBAction func badButton(_ sender: Any) {
                 TalkManager.shared.currentType = .bad
                 TalkManager.shared.badPoint += 1
-                kariLabel.text = TalkManager.shared.badOfLabel()
+                kariLabel.text = TalkManager.shared.badOfLabel().0
                 badLabel.text = String(TalkManager.shared.currentTotalbadPoint)
                 
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する

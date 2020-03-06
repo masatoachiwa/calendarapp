@@ -8,8 +8,7 @@
 
 import UIKit
 
-class SetupViewController: UIViewController,UITextFieldDelegate {
-
+class SetupViewController: UIViewController,UITextFieldDelegate {//ViewControllerクラスがUITextFieldDelegateプロトコルに準拠することを宣言する
         
         @IBOutlet var nameText: UITextField!
         
@@ -23,7 +22,8 @@ class SetupViewController: UIViewController,UITextFieldDelegate {
         
         
     override func viewDidLoad() {
-        nameText.delegate = self
+        nameText.delegate = self //UITextFieldクラスのインスタンスであるnametTextのdelegateプロパティにViewControllerのインスタンスを渡している
+
         effortText.delegate = self
         periodText.delegate = self
         unitText.delegate = self
@@ -40,16 +40,39 @@ class SetupViewController: UIViewController,UITextFieldDelegate {
         periodText.text = ccc
         
         let uuu = UserDefaults.standard.string(forKey: {"unit"}())
-        periodText.text = uuu
+        unitText.text = uuu
+        
+        
+        
+        
         
     }
     
         @IBAction func register(_ sender: Any) {
       
-        setup.register(name: nameText.text!)
-        setup.register2(effort: effortText.text!)
-       setup.register3(period: Int(periodText.text!)!)
-        setup.register4(unit: unitText.text!)
+                guard let nametext = nameText.text,
+                        let effortext = effortText.text,
+                        let periodtext = periodText.text,
+                        let unittext = unitText.text else{
+                                
+                                let alert = UIAlertController(title: "エラー", message: "入力されていない項目があります。", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                present(alert,animated: true, completion: nil)
+                                
+                                return
+                                
+                }
+                
+                
+        setup.register(name: nametext)
+        setup.register2(effort: effortext)
+       setup.register3(period: periodtext)
+        setup.register4(unit: unittext )
+                
+                print(nametext)
+                print(effortext)
+                print(periodtext)
+                print (unittext)
                 
         }
         
