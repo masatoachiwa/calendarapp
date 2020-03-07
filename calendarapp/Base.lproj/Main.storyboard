@@ -102,6 +102,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDb-Jg-nxk">
+                                <rect key="frame" x="159" y="318" width="211" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eSX-bc-Ds7"/>
@@ -115,6 +122,7 @@
                         <outlet property="kariLabel" destination="b4d-cq-Siq" id="uwu-y0-BZV"/>
                         <outlet property="pointLabel" destination="few-VI-K9y" id="kHC-ba-Hp1"/>
                         <outlet property="restButton" destination="wa8-SS-Rw3" id="qeJ-GR-QA5"/>
+                        <outlet property="testLabel" destination="NDb-Jg-nxk" id="R6Z-eO-ozR"/>
                         <outlet property="yearLabel" destination="vRf-k5-bds" id="SIo-hE-B1q"/>
                     </connections>
                 </viewController>

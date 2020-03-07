@@ -22,6 +22,10 @@ class TopViewController: UIViewController,UIApplicationDelegate {
         
         @IBOutlet var badLabel: UILabel!
         
+        
+        @IBOutlet var testLabel: UILabel!
+        
+        
      var n = 0
         
         @IBOutlet var topView: UIImageView!
@@ -165,10 +169,8 @@ class TopViewController: UIViewController,UIApplicationDelegate {
         
         //------日付更新処理-----------
 
-        - (void)applicationSignificantTimeChange:(UIApplication *)application{
-        
-        NSLog(@"日付の表示を変えてください。");
-        
+        func applicationSignificantTimeChange(_ application: UIApplication){
+               testLabel.text = "日付が変わりました"
         }
         
 
