@@ -110,9 +110,9 @@ class TopViewController: UIViewController,UIApplicationDelegate {
                // print(talkManager.dayArray)
                 
            
-//          badButton.isEnabled = false // ボタン無効
-//         restButton.isEnabled = false
-//          goodButton.isEnabled = false
+          badButton.isEnabled = false // ボタン無効
+          restButton.isEnabled = false
+          goodButton.isEnabled = false
                 
              
                 
@@ -171,6 +171,13 @@ class TopViewController: UIViewController,UIApplicationDelegate {
 
         func applicationSignificantTimeChange(_ application: UIApplication){
                testLabel.text = "日付が変わりました"
+      
+                badButton.isEnabled = true
+                restButton.isEnabled = true
+         goodButton.isEnabled = true
+        
+        
+        
         }
         
 
