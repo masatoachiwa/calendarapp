@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopViewController: UIViewController,UIApplicationDelegate {
+class TopViewController: UIViewController {
 
 
 
@@ -90,6 +90,15 @@ class TopViewController: UIViewController,UIApplicationDelegate {
                
         }
         
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(significantTimeChangeNotification(_:)), name: UIApplication.significantTimeChangeNotification, object: nil)
+    }
+        
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.significantTimeChangeNotification, object: nil)
+    }
         
         
         
@@ -169,20 +178,23 @@ class TopViewController: UIViewController,UIApplicationDelegate {
         
         //------日付更新処理-----------
 
-        func applicationSignificantTimeChange(_ application: UIApplication){
-               testLabel.text = "日付が変わりました"
-      
-                badButton.isEnabled = true
-                restButton.isEnabled = true
-         goodButton.isEnabled = true
+//        func applicationSignificantTimeChange(_ application: UIApplication){
+//               testLabel.text = "日付が変わりました"
+//
+//                badButton.isEnabled = true
+//                restButton.isEnabled = true
+//         goodButton.isEnabled = true
+//
+//
+//
+//        }
         
-        
-        
-        }
-        
-
-        
-        
+    @objc private func significantTimeChangeNotification(_ notification: Notification) {
+        testLabel.text = "日付が変わりました"
+        badButton.isEnabled = true
+        restButton.isEnabled = true
+        goodButton.isEnabled = true
+    }
         
 }
 
