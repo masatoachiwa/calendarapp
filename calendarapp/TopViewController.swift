@@ -36,7 +36,7 @@ class TopViewController: UIViewController {
         
         @IBOutlet var restButton: UIButton!
         
-        
+        let defaults = UserDefaults.standard
         
         
         let datemanager = DateManager()
@@ -56,17 +56,11 @@ class TopViewController: UIViewController {
         override func viewDidLoad() {
                 super.viewDidLoad()
               
-                
-                
-                
-                
-                
-                
-                
+
                 print("ファイルを修正しました")
        
                 yearLabel.text = "\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日"
-                
+                print(datemanager.year+datemanager.month+datemanager.day)
                 
                 TalkManager.shared.point = TalkManager.shared.currentTotalPoint
                 TalkManager.shared.badPoint = TalkManager.shared.currentTotalbadPoint
@@ -87,9 +81,13 @@ class TopViewController: UIViewController {
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
               
                
+            let goodButton2: Bool = UserDefaults.standard.bool(forKey: "goodButton")
+               goodButton.isEnabled = goodButton2
+                
+                
                
         }
-        
+        ////---------- 日付変更----------
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -100,7 +98,7 @@ class TopViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIApplication.significantTimeChangeNotification, object: nil)
     }
         
-        
+     ////--------------ここまで--------
         
         @IBAction func goodButton(_ sender: Any) {
                  TalkManager.shared.currentType = .good
@@ -119,11 +117,11 @@ class TopViewController: UIViewController {
                // print(talkManager.dayArray)
                 
            
-          badButton.isEnabled = false // ボタン無効
+          badButton.isEnabled = false   // ボタン無効
           restButton.isEnabled = false
-          goodButton.isEnabled = false
+         goodButton.isEnabled = false
                 
-             
+               defaults.set(false, forKey:"goodButton")
                 
         }
         
