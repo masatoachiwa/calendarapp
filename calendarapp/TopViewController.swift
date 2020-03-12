@@ -47,6 +47,10 @@ class TopViewController: UIViewController {
         let date = Date() //本日の日付取得
         let dateFormatter = DateFormatter() //文字列からDate型の日付を生成できる（インスタンスの作成）
       
+         let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String]          //配列の呼び出し
+        
+        
+        
         
     //    let newPoint = UserDefaults.standard.integer(forKey: {"point"}()) //消す
         
@@ -81,15 +85,55 @@ class TopViewController: UIViewController {
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
               
                
-            let goodButton2: Bool = UserDefaults.standard.bool(forKey: "goodButton")
-               goodButton.isEnabled = goodButton2
+//            let goodButton2: Bool = UserDefaults.standard.bool(forKey: "goodButton")
+//               goodButton.isEnabled = goodButton2
                 
+//                if goodButton.isEnabled == nil{
+//                        goodButton.isEnabled = false
+//                 }
+//
+             
+                if datemanager.month < 10 {
+                        let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String] ??  [""]        //配列の呼び出し
+                        
+                        let newMonth =  String("0") + String(datemanager.month)
+              print(newMonth)
+                        if alldayArray.contains(String(datemanager.year) + String(newMonth) + String(datemanager.day))   {
+                                //goodの配列の中の数字と、カレンダーの日付が同じ日に
+                            
+                                badButton.isEnabled = false
+                                restButton.isEnabled = false
+                                goodButton.isEnabled = false
+                    
+                        }else{ return
+                        }
                 
-               
+                }else{
+                          let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String] ??  [""]        //配列の呼び出し
+                    
+                    if    alldayArray.contains(String(datemanager.year) + String(datemanager.month) + String(datemanager.day)) {
+                                badButton.isEnabled = false
+                                restButton.isEnabled = false
+                                goodButton.isEnabled = false
+              
+                        }
+                        else{ return
+                }
+              
+        }
         }
         ////---------- 日付変更----------
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String]
+        print([alldayArray])
+     print( "\(String(datemanager.year))\(String(datemanager.month))\(String(datemanager.day))")
+        
+        
+        
+        
+        
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(significantTimeChangeNotification(_:)), name: UIApplication.significantTimeChangeNotification, object: nil)
     }
@@ -111,17 +155,19 @@ class TopViewController: UIViewController {
                 
          
                 talkManager.date(abcd:dateFormatter.string(from: date) )
+                talkManager.allDate(abcd:dateFormatter.string(from: date) )
          
-            //    talkManager.date(abcd: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: n, to: date)!))       日付が１日プラスされる（デバック用コード）
+                
+                //    talkManager.date(abcd: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: n, to: date)!))       日付が１日プラスされる（デバック用コード）
                // n = n + 1
                // print(talkManager.dayArray)
                 
            
-          badButton.isEnabled = false   // ボタン無効
-          restButton.isEnabled = false
+         badButton.isEnabled = false   // ボタン無効
+         restButton.isEnabled = false
          goodButton.isEnabled = false
                 
-               defaults.set(false, forKey:"goodButton")
+               defaults.set(goodButton.isEnabled, forKey:"goodButton")
                 
         }
         
@@ -137,13 +183,15 @@ class TopViewController: UIViewController {
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
-                //print(talkManager.baddayArray)
+                 talkManager.allDate(abcd:dateFormatter.string(from: date) )
                 
 //                badButton.isEnabled = false // ボタン無効
 //                restButton.isEnabled = false
 //                goodButton.isEnabled = false
                 
-         
+                           let goodButton2: Bool = defaults.bool(forKey: "goodButton")
+                               goodButton.isEnabled = goodButton2
+             
         }
         
         @IBAction func restButton(_ sender: Any) {
@@ -151,8 +199,7 @@ class TopViewController: UIViewController {
                 print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
-                print(talkManager.restdayArray)
-                
+              talkManager.allDate(abcd:dateFormatter.string(from: date) )
                 
 //                badButton.isEnabled = false // ボタン無効
 //                restButton.isEnabled = false

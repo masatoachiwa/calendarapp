@@ -63,9 +63,10 @@ class TalkManager {
         
      
         
-        var dayArray : [String] =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? ["りんご"])
-        var baddayArray : [String] =  (UserDefaults.standard.array(forKey: {"baddayArray"}())as? [String] ?? ["ごりら"])
-        var restdayArray : [String] =  (UserDefaults.standard.array(forKey: {"restdayArray"}())as? [String] ?? ["らっぱ"])
+        var dayArray : [String] =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? [""])
+        var baddayArray : [String] =  (UserDefaults.standard.array(forKey: {"baddayArray"}())as? [String] ?? [""])
+        var restdayArray : [String] =  (UserDefaults.standard.array(forKey: {"restdayArray"}())as? [String] ?? [""])
+         var alldayArray : [String] =  (UserDefaults.standard.array(forKey: {"restdayArray"}())as? [String] ?? [""])
         
         
         func date(abcd:String){ //yymmddの追加と値の保存
@@ -95,6 +96,18 @@ class TalkManager {
                 defaults.set(restdayArray, forKey: "restdayArray")
                 
         }
+        
+        func allDate(abcd:String){ //yymmddの追加と値の保存
+                
+                alldayArray.append(abcd)
+                
+                let defaults = UserDefaults.standard
+                defaults.set(alldayArray, forKey: "alldayArray")
+        
+
+        }
+        
+        
         
         
         func remove(){
