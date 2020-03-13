@@ -15,14 +15,17 @@ class ImageViewController: UIViewController {
         @IBOutlet var jkImage: UIImageView!
         
         @IBOutlet var speechText: UILabel!
+        @IBOutlet var loveBar: UIProgressView!
         
         
         
         
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-       
+
+        loveBar.transform = CGAffineTransform(scaleX: 1, y: 10)  //この行を追加
+       loveBar.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+        
         }
         override func viewWillAppear(_ animated: Bool) {
                
