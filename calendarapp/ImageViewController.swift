@@ -17,20 +17,38 @@ class ImageViewController: UIViewController {
         @IBOutlet var speechText: UILabel!
         @IBOutlet var loveBar: UIProgressView!
         
+        @IBOutlet var progress: UIButton!
+        
+        @IBOutlet var progressLabel: UILabel!
+        
+        @IBOutlet var count: UILabel!
+        var cu : Int = 0
+        
+        let transform1 = CGAffineTransform(scaleX: 1, y: 10)
+        let transform2 = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+        
+         let talkManager = TalkManager.shared
         
         
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loveBar.transform = CGAffineTransform(scaleX: 1, y: 10)  //この行を追加
-       loveBar.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+  loveBar.transform = transform1.concatenating(transform2)
         
         }
+        
+
+        
         override func viewWillAppear(_ animated: Bool) {
                
                 speechText.text = TalkManager.shared.numberOfLabel().0
                 jkImage.image = TalkManager.shared.numberOfLabel().1
+                
+                loveBar.setProgress(loveBar.progress + Float(Double(TalkManager.shared.currentTotalPoint) * 0.00555), animated: true)
+                progressLabel.text = String(TalkManager.shared.currentTotalPoint)
+               
+                
                 
                 
                 switch TalkManager.shared.currentType {
@@ -40,12 +58,29 @@ class ImageViewController: UIViewController {
                 case .bad:
                        speechText.text = TalkManager.shared.badOfLabel().0
                         
+
                 }
              
                 
         }
 
    
+        @IBAction func proguress(_ sender: Any) {
+     loveBar.setProgress(loveBar.progress + 0.00555, animated: true)
+      let num = loveBar.progress * 100
+                progressLabel.text = "\(ceil(num * 10)/10)%"
+        
+                cu = cu + 1
+                count.text = String(cu)
+                
+                
+        }
+        
+        
+        
+        
+        
+        
 }
 
 

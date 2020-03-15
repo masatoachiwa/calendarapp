@@ -66,8 +66,8 @@ class TopViewController: UIViewController {
                 yearLabel.text = "\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日"
                 print(datemanager.year+datemanager.month+datemanager.day)
                 
-                TalkManager.shared.point = TalkManager.shared.currentTotalPoint
-                TalkManager.shared.badPoint = TalkManager.shared.currentTotalbadPoint
+            //    TalkManager.shared.point = TalkManager.shared.currentTotalPoint
+           //     TalkManager.shared.badPoint = TalkManager.shared.currentTotalbadPoint
                 
                 switch TalkManager.shared.currentType {
                 case .good:
@@ -149,6 +149,8 @@ class TopViewController: UIViewController {
                 TalkManager.shared.point += 1
                 kariLabel.text = TalkManager.shared.numberOfLabel().0
                 pointLabel.text = String(TalkManager.shared.currentTotalPoint)
+           //      TalkManager.shared.lovePoint += 1
+           //     print(TalkManager.shared.lovePoint)
                 
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
                 print(dateFormatter.string(from: date)) //本日の日付を取得
@@ -165,7 +167,7 @@ class TopViewController: UIViewController {
            
          badButton.isEnabled = false   // ボタン無効
          restButton.isEnabled = false
-         goodButton.isEnabled = false
+  //       goodButton.isEnabled = false
                 
                defaults.set(goodButton.isEnabled, forKey:"goodButton")
                 
@@ -217,7 +219,9 @@ class TopViewController: UIViewController {
                 
               
                talkManager.remove()
-               
+                badButton.isEnabled = true
+                restButton.isEnabled = true
+                goodButton.isEnabled = true
         }
         
         
@@ -226,9 +230,7 @@ class TopViewController: UIViewController {
 //        func applicationSignificantTimeChange(_ application: UIApplication){
 //               testLabel.text = "日付が変わりました"
 //
-//                badButton.isEnabled = true
-//                restButton.isEnabled = true
-//         goodButton.isEnabled = true
+      
 //
 //
 //

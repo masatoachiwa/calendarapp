@@ -40,6 +40,19 @@ class TalkManager {
                 }
         }
         
+        var lovePoint: Double = 0 {
+                willSet {
+                        UserDefaults.standard.set(newValue, forKey: "lovePoint") //新しい値をnewValueに保存
+                        UserDefaults.standard.synchronize()
+                }
+        }
+        var currentTotallovePoint: Double {
+                get{
+                        return  UserDefaults.standard.double(forKey: "lovePoint")
+                }
+        }
+        
+
         var currentType: Type {
                 get{
                         guard let type = Type(rawValue: UserDefaults.standard.integer(forKey: "type")) else {  //enum TypeからKey"type"に保存された新しい値rawValueがあったらtypeに代入して返す。
