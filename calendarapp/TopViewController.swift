@@ -16,6 +16,8 @@ class TopViewController: UIViewController {
         
         @IBOutlet var doLabel: UILabel!
         
+        @IBOutlet var do2Label: UILabel!
+        
         @IBOutlet var kariLabel: UILabel!
         
         @IBOutlet var pointLabel: UILabel!
@@ -122,17 +124,25 @@ class TopViewController: UIViewController {
               
         }
         }
-        ////---------- 日付変更----------
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String]
+     
+//        let effort = UserDefaults.standard.string(forKey: {"effort"}())
+//
+//
+//        let period = UserDefaults.standard.string(forKey: {"period"}())
+//
+//        let unit = UserDefaults.standard.string(forKey: {"unit"}())
+        
+     //   doLabel.text = effort! + "を"
+     //   do2Label.text = period!  + unit! + "する"
+        
+        
+          ////---------- 日付変更----------
+        let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String]
         print([alldayArray])
      print( "\(String(datemanager.year))\(String(datemanager.month))\(String(datemanager.day))")
-        
-        
-        
-        
-        
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(significantTimeChangeNotification(_:)), name: UIApplication.significantTimeChangeNotification, object: nil)

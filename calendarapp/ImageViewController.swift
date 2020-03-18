@@ -15,13 +15,17 @@ class ImageViewController: UIViewController {
         @IBOutlet var jkImage: UIImageView!
         
         @IBOutlet var speechText: UILabel!
+  
         @IBOutlet var loveBar: UIProgressView!
         
-        @IBOutlet var progress: UIButton!
         
         @IBOutlet var progressLabel: UILabel!
         
         @IBOutlet var count: UILabel!
+
+        
+        
+        
         var cu : Int = 0
         
         let transform1 = CGAffineTransform(scaleX: 1, y: 10)
@@ -45,11 +49,12 @@ class ImageViewController: UIViewController {
                 speechText.text = TalkManager.shared.numberOfLabel().0
                 jkImage.image = TalkManager.shared.numberOfLabel().1
                 
-                loveBar.setProgress(loveBar.progress + Float(Double(TalkManager.shared.currentTotalPoint) * 0.00555), animated: true)
-                progressLabel.text = String(TalkManager.shared.currentTotalPoint)
-               
+                loveBar.setProgress(Float(Double(TalkManager.shared.currentTotalPoint) * 0.005555), animated: true)
+
+                let num = loveBar.progress * 100
+                progressLabel.text = "\(ceil(num * 10)/10)%"
                 
-                
+                count.text = String(TalkManager.shared.currentTotalPoint)
                 
                 switch TalkManager.shared.currentType {
                 case .good:
@@ -60,26 +65,22 @@ class ImageViewController: UIViewController {
                         
 
                 }
-             
-                
         }
 
-   
-        @IBAction func proguress(_ sender: Any) {
-     loveBar.setProgress(loveBar.progress + 0.00555, animated: true)
-      let num = loveBar.progress * 100
-                progressLabel.text = "\(ceil(num * 10)/10)%"
+  
+        @IBAction func goButton(_ sender: Any) {
+        }
         
-                cu = cu + 1
-                count.text = String(cu)
-                
-                
+        
+        @IBAction func backButton(_ sender: Any) {
         }
         
         
         
         
         
+        
+
         
 }
 
