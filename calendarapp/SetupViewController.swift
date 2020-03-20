@@ -56,36 +56,34 @@ class SetupViewController: UIViewController,UITextFieldDelegate {//ViewControlle
     }
     
         @IBAction func register(_ sender: Any) {
-      
-               if nameText.text == "" ||
-                effortText.text == "" ||
-                periodText.text == "" ||
-                unitText.text == ""{
-                
-
-                                let alert = UIAlertController(title: "エラー", message: "入力されていない項目があります。", preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                                present(alert,animated: true, completion: nil)
-                                
-                                return
-                                
-                }
-                
-                
-                setup.register(name: nameText.text!)
-                setup.register2(effort: effortText.text!)
+            register(handler: nil)
+        }
+    
+    @IBAction func registerForTutorial(_ sender: Any) {
+        register(handler: { _ in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+            UIApplication.shared.delegate?.window??.rootViewController = tabBarController
+        })
+    }
+    
+    private func register(handler: ((UIAlertAction) -> Void)? = nil) {
+        if nameText.text == "" || effortText.text == "" || periodText.text == "" || unitText.text == "" {
+            let alert = UIAlertController(title: "エラー", message: "入力されていない項目があります。", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alert,animated: true, completion: nil)
+            return
+        }
+        
+        setup.register(name: nameText.text!)
+        setup.register2(effort: effortText.text!)
         setup.register3(period: periodText.text!)
         setup.register4(unit: unitText.text! )
-               
-                let alert = UIAlertController(title: "メッセージ", message: "登録が完了しました。", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil)) //
-                present(alert,animated: true, completion: nil)
-                
-                return
-              
-                
-                
-        }
+        
+        let alert = UIAlertController(title: "メッセージ", message: "登録が完了しました。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: handler))
+        present(alert,animated: true, completion: nil)
+    }
         
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
                 // キーボードを閉じる
