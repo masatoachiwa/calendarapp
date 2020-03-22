@@ -24,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
                 
                 if(launchedBefore == true) {
+                      
                         
                         //動作確認のために1回実行ごとに値をfalseに設定し直す
-                        UserDefaults.standard.set(false, forKey: "launchedBefore")
+                     //   UserDefaults.standard.set(false, forKey: "launchedBefore")
                 } else {
                         //起動を判定するlaunchedBeforeという論理型のKeyをUserDefaultsに用意
                         UserDefaults.standard.set(true, forKey: "launchedBefore")

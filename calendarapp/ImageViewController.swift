@@ -39,6 +39,7 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
 
   loveBar.transform = transform1.concatenating(transform2)
+      
         
         }
         

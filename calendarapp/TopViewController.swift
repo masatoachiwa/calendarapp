@@ -18,14 +18,14 @@ class TopViewController: UIViewController {
         
         @IBOutlet var do2Label: UILabel!
         
-        @IBOutlet var kariLabel: UILabel!
+        @IBOutlet var kariLabel: UILabel! //デバック用ラベル
         
-        @IBOutlet var pointLabel: UILabel!
+       @IBOutlet var pointLabel: UILabel! //デバック用ラベル
         
-        @IBOutlet var badLabel: UILabel!
+       @IBOutlet var badLabel: UILabel! //デバック用ラベル
         
         
-        @IBOutlet var testLabel: UILabel!
+        @IBOutlet var testLabel: UILabel!  //デバック用日付変更確認ラベル
         
         
      var n = 0
@@ -53,26 +53,27 @@ class TopViewController: UIViewController {
         
         
         
-        
-    //    let newPoint = UserDefaults.standard.integer(forKey: {"point"}()) //消す
-        
-//        let newbadPoint = UserDefaults.standard.integer(forKey: {"badPoint"}()) //消す
-        
 
         override func viewDidLoad() {
                 super.viewDidLoad()
               
-
-                print("ファイルを修正しました")
-       
+              kariLabel.isHidden = true
+              pointLabel.isHidden = true
+              badLabel.isHidden = true
+              testLabel.isHidden = true
+               
                 yearLabel.text = "\(String(datemanager.year))年\(String(datemanager.month))月\(String(datemanager.day))日"
-                print(datemanager.year+datemanager.month+datemanager.day)
+               
+                let effort: String = UserDefaults.standard.string(forKey: "effort")!
+              let period: String = UserDefaults.standard.string(forKey: "period")!
+                 let unit: String = UserDefaults.standard.string(forKey: "unit")!
                 
-            //    TalkManager.shared.point = TalkManager.shared.currentTotalPoint
-           //     TalkManager.shared.badPoint = TalkManager.shared.currentTotalbadPoint
+                doLabel.text = effort + "を"
+               do2Label.text = period + unit + "する"
                 
-                switch TalkManager.shared.currentType {
-                case .good:
+                   switch TalkManager.shared.currentType { //---------------デバック用ポイント確認コード---
+       
+                   case .good:
                         kariLabel.text = TalkManager.shared.numberOfLabel().0
                           pointLabel.text = String(TalkManager.shared.currentTotalPoint)
                 case .bad:
@@ -80,26 +81,21 @@ class TopViewController: UIViewController {
                         
                 }
                 pointLabel.text = String(talkManager.currentTotalPoint)
-             badLabel.text = String(talkManager.currentTotalbadPoint)
-                
+                badLabel.text = String(talkManager.currentTotalbadPoint)
+                //---------ここまで---------------------------
+              
                 talkManager.date(abcd:dateFormatter.string(from: date) ) //配列に初期値を代入
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
               
                
-//            let goodButton2: Bool = UserDefaults.standard.bool(forKey: "goodButton")
-//               goodButton.isEnabled = goodButton2
-                
-//                if goodButton.isEnabled == nil{
-//                        goodButton.isEnabled = false
-//                 }
-//
-             
-                if datemanager.month < 10 {
+
+                if datemanager.month < 10 {  //----------------アプリ落としてもボタン押せない処理---------------------------------------
                         let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String] ??  [""]        //配列の呼び出し
                         
                         let newMonth =  String("0") + String(datemanager.month)
-              print(newMonth)
+     
+                        
                         if alldayArray.contains(String(datemanager.year) + String(newMonth) + String(datemanager.day))   {
                                 //goodの配列の中の数字と、カレンダーの日付が同じ日に
                             
@@ -122,24 +118,20 @@ class TopViewController: UIViewController {
                         else{ return
                 }
               
-        }
+        }//--------------------------------------------------ここまで---------------
         }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
      
-//        let effort = UserDefaults.standard.string(forKey: {"effort"}())
-//
-//
-//        let period = UserDefaults.standard.string(forKey: {"period"}())
-//
-//        let unit = UserDefaults.standard.string(forKey: {"unit"}())
+        let effort: String = UserDefaults.standard.string(forKey: "effort")!
+        let period: String = UserDefaults.standard.string(forKey: "period")!
+        let unit: String = UserDefaults.standard.string(forKey: "unit")!
         
-     //   doLabel.text = effort! + "を"
-     //   do2Label.text = period!  + unit! + "する"
+        doLabel.text = effort + "を"
+        do2Label.text = period + unit + "する"
         
-        
-          ////---------- 日付変更----------
+          ////---------- 日付変更---------------------
         let alldayArray =  UserDefaults.standard.array(forKey: {"alldayArray"}())as? [String]
         print([alldayArray])
      print( "\(String(datemanager.year))\(String(datemanager.month))\(String(datemanager.day))")
@@ -155,31 +147,25 @@ class TopViewController: UIViewController {
      ////--------------ここまで--------
         
         @IBAction func goodButton(_ sender: Any) {
-                 TalkManager.shared.currentType = .good
+                TalkManager.shared.currentType = .good
                 TalkManager.shared.point += 1
                 kariLabel.text = TalkManager.shared.numberOfLabel().0
                 pointLabel.text = String(TalkManager.shared.currentTotalPoint)
-           //      TalkManager.shared.lovePoint += 1
-           //     print(TalkManager.shared.lovePoint)
+        
                 
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
-                print(dateFormatter.string(from: date)) //本日の日付を取得
+          //      print(dateFormatter.string(from: date)) //本日の日付を取得
                 
          
                 talkManager.date(abcd:dateFormatter.string(from: date) )
                 talkManager.allDate(abcd:dateFormatter.string(from: date) )
          
-                
-                //    talkManager.date(abcd: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: n, to: date)!))       日付が１日プラスされる（デバック用コード）
-               // n = n + 1
-               // print(talkManager.dayArray)
-                
-           
+
          badButton.isEnabled = false   // ボタン無効
          restButton.isEnabled = false
-  //       goodButton.isEnabled = false
+         goodButton.isEnabled = false
                 
-               defaults.set(goodButton.isEnabled, forKey:"goodButton")
+        
                 
         }
         
@@ -192,14 +178,14 @@ class TopViewController: UIViewController {
                 badLabel.text = String(TalkManager.shared.currentTotalbadPoint)
                 
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
-                print(dateFormatter.string(from: date)) //本日の日付を取得
+             //   print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.badDate(abcd:dateFormatter.string(from: date) )
                  talkManager.allDate(abcd:dateFormatter.string(from: date) )
                 
-//                badButton.isEnabled = false // ボタン無効
-//                restButton.isEnabled = false
-//                goodButton.isEnabled = false
+                badButton.isEnabled = false // ボタン無効
+               restButton.isEnabled = false
+                goodButton.isEnabled = false
                 
                            let goodButton2: Bool = defaults.bool(forKey: "goodButton")
                                goodButton.isEnabled = goodButton2
@@ -208,14 +194,14 @@ class TopViewController: UIViewController {
         
         @IBAction func restButton(_ sender: Any) {
                 dateFormatter.dateFormat = "yyyyMMd" //yyMMddの形式で日付を生成する
-                print(dateFormatter.string(from: date)) //本日の日付を取得
+      //          print(dateFormatter.string(from: date)) //本日の日付を取得
                 
                 talkManager.restDate(abcd:dateFormatter.string(from: date) )
-              talkManager.allDate(abcd:dateFormatter.string(from: date) )
+                talkManager.allDate(abcd:dateFormatter.string(from: date) )
                 
-//                badButton.isEnabled = false // ボタン無効
-//                restButton.isEnabled = false
-//                goodButton.isEnabled = false
+                badButton.isEnabled = false // ボタン無効
+               restButton.isEnabled = false
+                goodButton.isEnabled = false
                 
                 
                 
@@ -234,17 +220,6 @@ class TopViewController: UIViewController {
                 goodButton.isEnabled = true
         }
         
-        
-        //------日付更新処理-----------
-
-//        func applicationSignificantTimeChange(_ application: UIApplication){
-//               testLabel.text = "日付が変わりました"
-//
-      
-//
-//
-//
-//        }
         
     @objc private func significantTimeChangeNotification(_ notification: Notification) {
         testLabel.text = "日付が変わりました"

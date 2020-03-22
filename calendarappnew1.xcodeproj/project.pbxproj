@@ -13,12 +13,14 @@
 		EE0417DC235229040011D305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0417DB235229040011D305 /* Assets.xcassets */; };
 		EE0417DF235229040011D305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0417DD235229040011D305 /* LaunchScreen.storyboard */; };
 		EE233EA723A53B1400348B77 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE233EA623A53B1400348B77 /* ImageViewController.swift */; };
+		EE23DF26242688ED00385E45 /* Button_Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE23DF25242688ED00385E45 /* Button_Custom.swift */; };
 		EE29EDF9241E5FF900F9BA15 /* tableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29EDF8241E5FF900F9BA15 /* tableViewViewController.swift */; };
 		EE2A300223CDE1CB00001AC2 /* TypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A300123CDE1CB00001AC2 /* TypeManager.swift */; };
 		EE39752523FDA2E100DFBA8E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE39752423FDA2E100DFBA8E /* SetupViewController.swift */; };
 		EE39752723FDA68000DFBA8E /* SetupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE39752623FDA68000DFBA8E /* SetupManager.swift */; };
 		EE3E7F852358CF8800C85FA2 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E7F842358CF8800C85FA2 /* CalendarCell.swift */; };
 		EE40D35D2368A9ED002F9AE8 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40D35C2368A9ED002F9AE8 /* DateManager.swift */; };
+		EE50D1902427C29E0021B126 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE50D18F2427C29E0021B126 /* CustomLabel.swift */; };
 		EEA1164723A8B6C300213FBB /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1164623A8B6C300213FBB /* TopViewController.swift */; };
 		EEA1164923A8BD1E00213FBB /* TalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA1164823A8BD1E00213FBB /* TalkManager.swift */; };
 /* End PBXBuildFile section */
@@ -32,12 +34,14 @@
 		EE0417DE235229040011D305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE0417E0235229040011D305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE233EA623A53B1400348B77 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		EE23DF25242688ED00385E45 /* Button_Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button_Custom.swift; sourceTree = "<group>"; };
 		EE29EDF8241E5FF900F9BA15 /* tableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewViewController.swift; sourceTree = "<group>"; };
 		EE2A300123CDE1CB00001AC2 /* TypeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeManager.swift; sourceTree = "<group>"; };
 		EE39752423FDA2E100DFBA8E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		EE39752623FDA68000DFBA8E /* SetupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupManager.swift; sourceTree = "<group>"; };
 		EE3E7F842358CF8800C85FA2 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		EE40D35C2368A9ED002F9AE8 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		EE50D18F2427C29E0021B126 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		EEA1164623A8B6C300213FBB /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		EEA1164823A8BD1E00213FBB /* TalkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +87,8 @@
 				EE2A300123CDE1CB00001AC2 /* TypeManager.swift */,
 				EE3E7F842358CF8800C85FA2 /* CalendarCell.swift */,
 				EE0417D8235229010011D305 /* Main.storyboard */,
+				EE50D18F2427C29E0021B126 /* CustomLabel.swift */,
+				EE23DF25242688ED00385E45 /* Button_Custom.swift */,
 				EE29EDF8241E5FF900F9BA15 /* tableViewViewController.swift */,
 				EE0417DB235229040011D305 /* Assets.xcassets */,
 				EE0417E0235229040011D305 /* Info.plist */,
@@ -162,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE23DF26242688ED00385E45 /* Button_Custom.swift in Sources */,
 				EEA1164723A8B6C300213FBB /* TopViewController.swift in Sources */,
 				EE39752723FDA68000DFBA8E /* SetupManager.swift in Sources */,
 				EE2A300223CDE1CB00001AC2 /* TypeManager.swift in Sources */,
@@ -170,6 +177,7 @@
 				EE233EA723A53B1400348B77 /* ImageViewController.swift in Sources */,
 				EEA1164923A8BD1E00213FBB /* TalkManager.swift in Sources */,
 				EE3E7F852358CF8800C85FA2 /* CalendarCell.swift in Sources */,
+				EE50D1902427C29E0021B126 /* CustomLabel.swift in Sources */,
 				EE39752523FDA2E100DFBA8E /* SetupViewController.swift in Sources */,
 				EE29EDF9241E5FF900F9BA15 /* tableViewViewController.swift in Sources */,
 				EE0417D5235229010011D305 /* AppDelegate.swift in Sources */,

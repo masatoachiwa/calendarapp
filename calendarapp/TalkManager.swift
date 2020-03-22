@@ -68,12 +68,9 @@ class TalkManager {
                           UserDefaults.standard.set(newValue.rawValue, forKey: "type")
                 }
         }
-        var userDefaults = UserDefaults.standard  // UserDefaultsの定義
+   
       
-//        var dayArray: [String] = []
-//        var baddayArray: [String] = []
-//        var restdayArray: [String] = []
-        
+
      
         
         var dayArray : [String] =  (UserDefaults.standard.array(forKey: {"dayArray"}())as? [String] ?? [""])
@@ -124,16 +121,16 @@ class TalkManager {
         
         
         func remove(){
-                dayArray.removeAll() //配列空にする
                 let defaults = UserDefaults.standard
+                dayArray.removeAll() //配列空にする
                 defaults.set(dayArray, forKey: "dayArray")
                 baddayArray.removeAll() //配列空にする
-                let baddefaults = UserDefaults.standard
-                baddefaults.set(baddayArray, forKey: "baddayArray")
+                defaults.set(baddayArray, forKey: "baddayArray")
                 restdayArray.removeAll() //配列空にする
-                let restdefaults = UserDefaults.standard
-                restdefaults.set(restdayArray, forKey: "restdayArray")
+                defaults.set(restdayArray, forKey: "restdayArray")
                 
+                alldayArray.removeAll()
+                 defaults.set(alldayArray, forKey: "alldayArray")
         }
         
 
