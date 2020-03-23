@@ -14,7 +14,7 @@ class ImageViewController: UIViewController {
         
         @IBOutlet var jkImage: UIImageView!
         
-        @IBOutlet var speechText: UILabel!
+        @IBOutlet var speechText: CustomLabel!
   
         @IBOutlet var loveBar: UIProgressView!
         
@@ -39,6 +39,7 @@ class ImageViewController: UIViewController {
         super.viewDidLoad()
 
   loveBar.transform = transform1.concatenating(transform2)
+        speechText.padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
       
         
         }

@@ -19,7 +19,7 @@ import UIKit
                 @IBInspectable var borderWidth: CGFloat = 0.0
                 
                 // 余白
-                let padding = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+                var padding: UIEdgeInsets = .zero
                 
                 override func drawText(in rect: CGRect) {
                         // 角丸
